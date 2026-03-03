@@ -87,3 +87,10 @@ contains a `script` tag that loads the `app/js/main.js` JavaScript
 file. Remember that the `:app` `:build` specification in 
 `shadow-cljs.edn` described how to build our application.
 
+## Serve HTML and JS over HTTP
+
+We can specify the development web server details in the 
+`shadow-cljs.edn` file by adding the item, 
+`:dev-http {8008 "public"}`. We'll add this item just above the 
+`:builds` key.
+
