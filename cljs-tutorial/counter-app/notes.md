@@ -91,6 +91,22 @@ file. Remember that the `:app` `:build` specification in
 
 We can specify the development web server details in the 
 `shadow-cljs.edn` file by adding the item, 
-`:dev-http {8008 "public"}`. We'll add this item just above the 
-`:builds` key.
+`:dev-http {8080 "public"}`. We'll add this item just above the 
+`:builds` key. These details tell shadow-cljs to make files in 
+the "public" directory on port 8080.
+
+## Write some ClojureScript
+
+(Finally!)
+
+We'll write minimal code. This code will simply write to the 
+JavaScript console in the browser.
+
+We've specified that shadow-cljs will run the function, 
+`counter.app/init` when our application starts. The prefix, 
+`counter.app` indicates that the `init` function is found in the file 
+`counter/app.cljs`. Further, this file must be found in the `src/main`
+subdirectory. So let's edit this file.
+
+(Just to be clear, let's edit the file, `src/main/counter/app.cljs`.)
 
