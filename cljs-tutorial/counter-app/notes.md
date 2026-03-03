@@ -51,4 +51,29 @@ When executed the first time, `npx create-cljs-project <app-name>` will
 We can now test our REPL connection by entering the expression, 
 `(js/alert "Hello!")` at the REPL prompt in the terminal.
 
+## Creating a shadow-cljs build to manage compilation
+
+If we open the `shadow-cljs.edn` file, we see the keys:
+
+- `source-paths` - Where to find ClojureScript source code
+- `dependencis` - Other ClojureScript libraries we need
+- `builds` - The JavaScript files we want to build
+
+Let's create a new build called `:app` by adding the following
+item to the `:builds` map:
+
+```Clojure
+{:app ;; name of build
+ {:target :browser ;; we target the browser
+  :output-dir "public/app/js" ;; where to output JS files
+  :asset-path "/app/js" ;; prefix for our page URLs
+  :modules {:main ;; our application only needs one module
+                  ;; we will generatethe JavaScript file, `main.js`
+            ;; run `counter.app/init` when JavaScript loads
+            {:init-fn counter.app/init}}}}
+```
+
+Remember, shadow-cljs performs **tree shaking** to determine all
+the minimal JavaScript code needed to execute `counter.app/init`.
+This process helps keep our JavaScript files small.
 
