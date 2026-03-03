@@ -77,3 +77,13 @@ Remember, shadow-cljs performs **tree shaking** to determine all
 the minimal JavaScript code needed to execute `counter.app/init`.
 This process helps keep our JavaScript files small.
 
+## Create a minimal HTML file
+
+We previously defined the build, `:app`, to generate our JavaScript
+file. We now want to create a minimal HTML file.
+
+We create that page in the file `public/index.html`. This file 
+contains a `script` tag that loads the `app/js/main.js` JavaScript 
+file. Remember that the `:app` `:build` specification in 
+`shadow-cljs.edn` described how to build our application.
+
