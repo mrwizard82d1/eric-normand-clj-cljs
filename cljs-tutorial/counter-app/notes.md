@@ -110,3 +110,28 @@ subdirectory. So let's edit this file.
 
 (Just to be clear, let's edit the file, `src/main/counter/app.cljs`.)
 
+## Start shadow-cljs to begin hacking
+
+As is typical with web applications, we had to specify many details 
+to get to the point of running our (stupid simple) web application. 
+Most of the time, we use a template to provide all this "boilerplate".
+However, for teaching purposes, we wanted you to see "how the sausage 
+is made."
+
+We are finally ready to start the build. We want shadow-cljs to both
+build our application once, but also to watch our build as the files 
+change. To accomplish these goals, we run this command:
+
+`npx shadow-cljs watch app`
+
+`watch` is the shadow-cljs command to watch our source code for 
+changes. If any changes are found, shadow-cljs will automatically
+recompile them and send them to the browser. `app` specifies 
+which build to use.
+
+Once built (a few seconds), open the URL `http://localhost:8080/` in
+a browser. The browser will display our (empty) page and will print 
+our congratulatory message in the JavaScript console. (Additionally,
+the title of our shiny new page is printed on our browser tab.)
+
+
