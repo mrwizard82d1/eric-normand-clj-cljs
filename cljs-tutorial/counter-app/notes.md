@@ -134,4 +134,17 @@ a browser. The browser will display our (empty) page and will print
 our congratulatory message in the JavaScript console. (Additionally,
 the title of our shiny new page is printed on our browser tab.)
 
+## Master live coding by understanding loading and reloading
 
+The `:init-fn` runs every time our application starts. (Warning! Starting
+our application is the equivalent of a page load. When watching for 
+changes, `:init-fn` is only called **once** - when the page is loaded.)
+
+To observe this behavior, we change the message printed to the JS console 
+to "App initialization!"; however, even when watching for changes we do
+not see our new message printed to the JS console even though we **do see**
+messages about reloading our code and loading JavaScript from the file,
+`counter/app.cljs`.
+
+To see the changes in `counter.app/init`, we must **refresh the browser**. 
+We then see our new message.
