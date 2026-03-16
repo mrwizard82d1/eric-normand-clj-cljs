@@ -148,3 +148,8 @@ messages about reloading our code and loading JavaScript from the file,
 
 To see the changes in `counter.app/init`, we must **refresh the browser**. 
 We then see our new message.
+
+Let's add code **outside** the `counter.app/init` function. We'll add the
+expression `(println "Code reloaded!")`. This code appears in our 
+JavaScript console shortly after we save the file (but again, our 
+"App initialization!" message occurs only once.)
