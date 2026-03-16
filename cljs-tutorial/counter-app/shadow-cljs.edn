@@ -15,6 +15,6 @@
    :output-dir "public/app/js" ;; where to output JS files
    :asset-path "/app/js" ;; prefix for our page URLs
    :modules    {:main ;; our application only needs one module
-                ;; we will generatethe JavaScript file, `main.js`
-                ;; run `counter.app/init` when JavaScript loads
+                ;; we will generate the JavaScript file, `main.js`
+                ;; we start `counter.app/init` when JavaScript loads
                 {:init-fn counter.app/init}}}}}
